@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Email Validation</title>
+	<script>
+		function validateEmail() {
+			var email = document.getElementById("email");
+			var regex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+			if (!regex.test(email.value)) {
+				alert("Please enter a valid email address.");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Email Validation</h1>
+	<p>Please enter your email address:</p>
+	<form onsubmit="return validateEmail();">
+		<input type="email" id="email" name="email">
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
