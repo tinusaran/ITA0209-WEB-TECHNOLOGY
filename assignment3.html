@@ -1,0 +1,65 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form Validation</title>
+</head>
+<body>
+    <h1>Student Form Validation</h1>
+    
+    <%-- Check if the form was submitted --%>
+    <%
+    if(request.getMethod().equalsIgnoreCase("POST")) {
+        // Retrieve form data
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String age = request.getParameter("age");
+        String gender = request.getParameter("gender");
+        
+        // Perform validation
+        boolean isValid = true;
+        if(name.isEmpty()) {
+            out.println("<p>Please enter your name.</p>");
+            isValid = false;
+        }
+        if(email.isEmpty() || !email.matches("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b")) {
+            out.println("<p>Please enter a valid email address.</p>");
+            isValid = false;
+        }
+        if(phone.isEmpty() || !phone.matches("\\b\\d{3}-\\d{3}-\\d{4}\\b")) {
+            out.println("<p>Please enter a valid phone number in the format xxx-xxx-xxxx.</p>");
+            isValid = false;
+        }
+        if(age.isEmpty() || !age.matches("\\b\\d{1,2}\\b")) {
+            out.println("<p>Please enter your age as a number.</p>");
+            isValid = false;
+        }
+        if(gender == null || gender.isEmpty()) {
+            out.println("<p>Please select a gender.</p>");
+            isValid = false;
+        }
+        
+        if(isValid) {
+            // Display success message
+            out.println("<p>Form submitted successfully!</p>");
+        }
+    }
+    %>
+    
+    <form method="POST">
+        <label>Name:</label>
+        <input type="text" name="name"><br>
+        <label>Email:</label>
+        <input type="text" name="email"><br>
+        <label>Phone:</label>
+        <input type="text" name="phone"><br>
+        <label>Age:</label>
+        <input type="text" name="age"><br>
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="other">Other<br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
