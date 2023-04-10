@@ -1,0 +1,27 @@
+<IDOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8/>
+<title>JS DOM paragraph style</title>
+<script>
+		function changeFontSize(size) {
+			document.getElementById("text").style.fontSize = size + "px";
+		}
+		function changeFontColor(color) {
+			document.getElementById("text").style.color = color;
+		}
+	</script>
+</head>
+<body>
+<h1>Javascript Exercises - resource</h1>
+	<p id="text">TEAM 8</p>
+	<button onclick="changeFontSize(20)">Increase Font Size</button>
+	<button onclick="changeFontSize(16)">Default Font Size</button>
+	<button onclick="changeFontSize(12)">Decrease Font Size</button>
+	<br><br>
+	<button onclick="changeFontColor('red')">Red</button>
+	<button onclick="changeFontColor('blue')">Blue</button>
+	<button onclick="changeFontColor('green')">Green</button>
+</div>
+</body>
+</html>
