@@ -1,0 +1,14 @@
+<html>
+<head>
+	<title>Date and Time Example</title>
+</head>
+<body>
+	<h1>Current Date and Time:</h1>
+	<p id="datetime"></p>
+	<script>
+		var today = new Date();
+		var datetime = today.toLocaleString();
+		document.getElementById("datetime").innerHTML = datetime;
+	</script>
+</body>
+</html>
