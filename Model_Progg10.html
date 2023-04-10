@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Switch Statement Example</title>
+  </head>
+  <body>
+    <h1>JavaScript</h1>
+    <p>Enter a number between 1 to 7:</p>
+    <input type="text" id="numInput">
+    <button onclick="checkNumber()">Enter</button>
+    <p id="result"></p>
+
+    <script>
+      function checkNumber() {
+        var num = document.getElementById("numInput").value;
+        var result = document.getElementById("result");
+        switch (num) {
+          case "1":
+            result.innerHTML = "Sunday";
+            break;
+          case "2":
+            result.innerHTML = "Monday.";
+            break;
+          case "3":
+            result.innerHTML = "Tuesday.";
+            break;
+          case "4":
+            result.innerHTML = "Wednesday.";
+            break;
+          case "5":
+            result.innerHTML = "Thursday.";
+            break;
+			case "6":
+            result.innerHTML = "Friday.";
+            break;
+			case "7":
+            result.innerHTML = "Saturday.";
+            break;
+          default:
+            result.innerHTML = "Please enter a number between 1 and 7.";
+        }
+      }
+    </script>
+  </body>
+</html>
