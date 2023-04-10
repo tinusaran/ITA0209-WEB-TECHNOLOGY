@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Radio Button Example</title>
+</head>
+<body>
+	<h1>Choose your favorite programming language:</h1>
+	<form>
+		<input type="radio" id="java" name="language" value="java">
+		<label for="java">Java</label><br>
+		<input type="radio" id="unix" name="language" value="unix">
+		<label for="python">Unix</label><br>
+		<input type="radio" id="DBMS" name="language" value="DBMS">
+		<label for="javascript">DBMS</label><br>
+		<input type="radio" id="OOPS" name="language" value="OOPS">
+		<label for="javascript">OOPS</label><br>
+		<input type="button" value="Submit" onclick="showAlert()">
+		 <input type="reset" value="Reset">
+	</form>
+
+	<script>
+		function showAlert() {
+			var language = document.querySelector('input[name="language"]:checked');
+			if (language) {
+				alert("You've selected: " + language.value);
+			} else {
+				alert("Please select an option!");
+			}
+		}
+	</script>
+</body>
+</html>
