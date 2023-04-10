@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>User Input Example</title>
+  </head>
+  <body>
+  <center>
+    <label for="userInput">Enter a number:</label>
+    <input type="text" id="userInput">
+    <button onclick="processInput()">Submit</button>
+    <br>
+    <p id="output"></p>
+
+    <script>
+      function processInput() {
+        let userInput = document.getElementById("userInput").value;
+        let outputElement = document.getElementById("output");
+
+        if (userInput > 100) {
+          outputElement.innerText = "The Entered number is greater than 100";
+        } else {
+          outputElement.innerText = "The Entered number is lesser than 100";
+        }
+      }
+    </script>
+	</center>
+  </body>
+</html>
